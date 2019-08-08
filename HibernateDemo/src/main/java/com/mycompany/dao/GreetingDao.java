@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 public class GreetingDao {
     

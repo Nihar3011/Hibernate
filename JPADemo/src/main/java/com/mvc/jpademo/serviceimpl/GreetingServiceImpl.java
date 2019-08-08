@@ -11,7 +11,7 @@ import com.mvc.jpademo.model.Greetings;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 public class GreetingServiceImpl {
     

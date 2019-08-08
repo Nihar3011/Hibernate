@@ -11,7 +11,7 @@ import com.mycompany.model.Greetings;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 public class GreetingServiceImpl {
     

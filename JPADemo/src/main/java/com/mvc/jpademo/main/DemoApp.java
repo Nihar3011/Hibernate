@@ -9,7 +9,7 @@ import com.mvc.jpademo.controller.GreetingsController;
 
 /**
  *
- * @author dhruvit
+ * @author nihar
  */
 public class DemoApp {
     public static void main(String[] args) {

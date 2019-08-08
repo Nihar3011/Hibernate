@@ -10,7 +10,7 @@ import com.mycompany.serviceimpl.GreetingServiceImpl;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 
 public class GreetingsController {

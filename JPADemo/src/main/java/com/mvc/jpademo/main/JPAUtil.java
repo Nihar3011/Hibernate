@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author dhruvit
+ * @author nihar
  */
 public class JPAUtil {
     

@@ -9,7 +9,7 @@ import com.mycompany.controller.GreetingsController;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 public class JpaHibernateDemo {
     public static void main(String[] args) {

@@ -10,7 +10,7 @@ import com.mvc.jpademo.serviceimpl.GreetingServiceImpl;
 
 /**
  *
- * @author raj
+ * @author nihar
  */
 
 public class GreetingsController {
