@@ -15,5 +15,6 @@ public class DemoApp {
     public static void main(String[] args) {
        GreetingsController greetingsController = new GreetingsController();
        greetingsController.createHelloWorld();
+       JPAUtil.shutdown();
     }
 }
