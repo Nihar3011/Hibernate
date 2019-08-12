@@ -1,6 +1,7 @@
 package com.shoppingcart.dao;
 
-import com.shoppingcart.model.Item;
+import com.shoppingcart.model.Category;
+import com.shoppingcart.model.CreditCard;
 import com.shoppingcart.model.Users;
 import com.shoppingcart.util.EntityManagerUtil;
 import java.util.List;
@@ -10,16 +11,16 @@ import javax.persistence.EntityManager;
  *
  * @author nihar
  */
-public class ItemDaoImpl implements ItemDao {
+public class CreditCardDaoImpl implements CreditCardDao {
 
     private EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
     @Override
-    public void create(int sallerId, Item item) {
+    public void create(int userId,CreditCard creditCard) {
         try {
             entityManager.getTransaction().begin();
-            item.setSaller( entityManager.find(Users.class, sallerId));
-            entityManager.persist(item);
+            creditCard.setUser(entityManager.find(Users.class, userId));
+            entityManager.persist(creditCard);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             if (entityManager.getTransaction() != null) {
@@ -29,17 +30,14 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-    public Item get(int id) {
-        Item item = null;
-        try {
-            item = entityManager.find(Item.class, id);
-        } catch (Exception e) {
-        }
-        return item;
+    public CreditCard get(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
-    public List<Item> getAll() {
+    public List<CreditCard> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

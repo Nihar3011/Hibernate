@@ -6,8 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.Type;
 
 /**
  *
@@ -51,30 +49,6 @@ public class Users {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Address> addresses = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<BillingDetails> billings = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "saller_id")
-    private List<Item> items = new ArrayList<>();
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    public List<BillingDetails> getBillings() {
-        return billings;
-    }
-
-    public void setBillings(List<BillingDetails> billings) {
-        this.billings = billings;
-    }
 
     public Users() {
     }

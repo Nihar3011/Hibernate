@@ -12,11 +12,12 @@ import org.apache.commons.lang.builder.ToStringStyle;
 
 @Entity
 @Table(name = "creditcard")
-public class CreditCard {
+@PrimaryKeyJoinColumn(name = "id")
+public class CreditCard  extends BillingDetails{
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
     
     @Column(name = "type")
     @NotNull
@@ -37,22 +38,25 @@ public class CreditCard {
     public CreditCard() {
     }
 
-    public CreditCard(CreditCardType type, String number, String expmonth, String expyear) {
+    public CreditCard(CreditCardType type, String number, String expmonth, String expyear, String ownername) {
+        super(ownername);
         this.type = type;
         this.number = number;
         this.expmonth = expmonth;
         this.expyear = expyear;
     }
+
+   
     
     
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
     public CreditCardType getType() {
         return type;

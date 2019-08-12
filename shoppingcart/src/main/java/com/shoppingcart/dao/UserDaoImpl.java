@@ -2,8 +2,10 @@ package com.shoppingcart.dao;
 
 import com.shoppingcart.model.Users;
 import com.shoppingcart.util.EntityManagerUtil;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -38,6 +40,12 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public List<Users> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       List<Users> users=new ArrayList<>();
+        try {
+         Query query= entityManager.createQuery("from Users",Users.class);
+         users= query.getResultList();
+        } catch (Exception e) {
+        }
+     return users;
     }
 }

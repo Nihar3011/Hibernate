@@ -1,4 +1,4 @@
-package com.shoppingcart.model;
+    package com.shoppingcart.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

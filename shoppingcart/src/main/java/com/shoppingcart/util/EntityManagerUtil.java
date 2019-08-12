@@ -24,4 +24,10 @@ public class EntityManagerUtil {
     public static EntityManager getEntityManager() {
         return entityManagerFactory.createEntityManager();
     }
+    
+      public static void shutdown() {
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
+        }
+    }
 }

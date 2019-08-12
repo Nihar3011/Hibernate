@@ -11,11 +11,12 @@ import org.apache.commons.lang.builder.ToStringStyle;
  */
 @Entity
 @Table(name = "bankaccount")
-public class BankAccount {
+@PrimaryKeyJoinColumn(name = "id")
+public class BankAccount extends BillingDetails{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Integer id;
     
     @Column(name = "number", length = 16)
     @NotNull
@@ -31,14 +32,20 @@ public class BankAccount {
 
     public BankAccount() {
     }
-
-    public Integer getId() {
-        return id;
+    
+    public BankAccount(String number, String bankname, String swift, String ownername) {
+        super(ownername);
+        this.number = number;
+        this.bankname = bankname;
+        this.swift = swift;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 
     public String getNumber() {
         return number;
